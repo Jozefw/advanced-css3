@@ -27,8 +27,8 @@ body{
     height: 95vh;
     background-image:linear-gradient(
         to right bottom,
-        rgba(126, 213, 111, .5),
-        rgba(40, 180, 133, .5)), 
+        rgba(127, 226, 243, 0.7),
+        rgba(94, 40, 180, 0.7)), 
         url("../img/hero.jpg");
     background-size: cover;
     background-position: top;
@@ -46,12 +46,14 @@ body{
     position: absolute;
     top: 40%;
     left: 50%;
-    background-color: red;
     transform: translate(-50%,-50%);
+    text-align: center;
 }
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
+    text-align: center;
+    backface-visibility: hidden;
 }
 
 .heading-primary-main{
@@ -59,6 +61,9 @@ body{
     font-size: 60px;
     font-weight: 700;
     letter-spacing: 13px;
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
 }
 
 .heading-primary-sub{
@@ -66,4 +71,90 @@ body{
     font-size: 44px;
     font-weight: 100;
     letter-spacing: 15.4px;
+    animation-name: moveInRight;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    margin-bottom: 60px;
 }
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80% {
+        transform: translateX(15px)
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0)
+    }
+    }
+    
+    @keyframes moveInRight {
+        0% {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        80% {
+            transform: translateX(-15px)
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0)
+        }
+        }
+
+        @keyframes moveInBottome {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+           
+            100% {
+                opacity: 1;
+                transform: translate(0)
+            }
+            }
+        .btn:link,
+        .btn:visited {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: inherit;
+            padding: 15px 40px;
+            display: inline-block;
+            border-radius: 80px;
+            transition: all .1s;
+            position: relative;
+        }
+        .btn:hover{
+            transform:translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,.5);
+        }
+        .btn:active{
+            transform: translateY(-1px);
+            box-shadow: 0 5px 10px rgba(0,0,0,.5);
+        }
+        .btn-white {
+            background-color: #fff; 
+            color: #777;
+        }
+        .btn-white::after{
+            background-color: #fff;
+        }
+        .btn::after{
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            border-radius: 80px;
+            position: absolute;
+            top: 0; 
+            left: 0;
+            z-index: -1;
+            transition: all .4s;
+        }
+        .btn:hover::after{
+            transform: scaleY(1.5) scaleX(1.4);
+            opacity: 0;
+        }
