@@ -105,15 +105,14 @@ body{
         }
         }
 
-        @keyframes moveInBottome {
+        @keyframes moveInBottom {
             0% {
                 opacity: 0;
-                transform: translateX(100px);
+                transform: translateY(30px);
             }
-           
             100% {
                 opacity: 1;
-                transform: translate(0)
+                transform: translateY(0);
             }
             }
         .btn:link,
@@ -157,4 +156,8 @@ body{
         .btn:hover::after{
             transform: scaleY(1.5) scaleX(1.4);
             opacity: 0;
+        }
+        .btn-animated {
+            animation: moveInBottom .5s ease-in .75s;
+            animation-fill-mode: backwards;
         }
