@@ -1,0 +1,24 @@
+{
+  "name": "advanced-css-course-master",
+  "version": "1.0.0",
+  "description": "This repo contains starter files and the finished project files for all the projects contained in the course.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass sass/main.scss Natours/starter/css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jozefw/advanced-css3.git"
+  },
+  "author": "Jozef Woroniecki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jozefw/advanced-css3/issues"
+  },
+  "homepage": "https://github.com/Jozefw/advanced-css3#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.7.2"
+  }
+}
